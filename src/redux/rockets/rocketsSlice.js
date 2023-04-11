@@ -3,12 +3,12 @@ import fetchAllRockets from './rocketsApi';
 
 const fetchRockets = createAsyncThunk(
   'rockets/fetchRockets',
-  async (thunkAPI) => {
+  async () => {
     try {
       const rockets = await fetchAllRockets();
       return rockets;
     } catch (err) {
-      return thunkAPI.rejectWithValue(err.message);
+      return err.message;
     }
   },
 );
@@ -31,9 +31,9 @@ const rocketsSlice = createSlice({
       ready: false,
       error: null,
     }));
-    builder.addCase(fetchRockets.fulfilled, (state,action) => ({
+    builder.addCase(fetchRockets.fulfilled, (action) => ({
       ready: true,
-      rockets: state,
+      rockets: action.payload,
       error: null,
     }));
     builder.addCase(fetchRockets.rejected, (state, action) => ({

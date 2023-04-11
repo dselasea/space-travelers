@@ -9,13 +9,11 @@ const Rockets = () => {
   useEffect(() => {
     if (rockets.length) return;
     dispatch(fetchRockets());
-  }, [dispatch, rockets.length]);
+  }, []);
 
   return (
     <div className="card mb-3 mt-4">
-      <div className="row g-0">
         {console.log(rockets)}
-      </div>
     </div>
   );
 };
