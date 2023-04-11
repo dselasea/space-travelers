@@ -5,8 +5,8 @@ import './Navbar.css';
 const Navbar = () => (
   <nav>
     <NavLink to="/">Rockets</NavLink>
-    <NavLink to="missions">Mission</NavLink>
-    <NavLink to="myprofile">My Profile</NavLink>
+    <NavLink to="missions">Missions</NavLink>
+    <NavLink to="myprofile">My&nbsp;Profile</NavLink>
   </nav>
 );
 
