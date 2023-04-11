@@ -8,7 +8,7 @@ const fetchAllRockets = async () => {
     rocket_id: rocket.id,
     rocket_name: rocket.rocket_name,
     rocket_description: rocket.description,
-    rocket_image: rocket.flickr_images[0]
+    rocket_image: rocket.flickr_images[0],
   }));
   return data;
 };

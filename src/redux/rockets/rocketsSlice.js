@@ -31,7 +31,7 @@ const rocketsSlice = createSlice({
       ready: false,
       error: null,
     }));
-    builder.addCase(fetchRockets.fulfilled, (action) => ({
+    builder.addCase(fetchRockets.fulfilled, (_, action) => ({
       ready: true,
       rockets: action.payload,
       error: null,
