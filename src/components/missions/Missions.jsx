@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchMissions, joinMission } from '../../redux/missions/missionsSlice';
+import { fetchMissions, joinMission, leaveMission } from '../../redux/missions/missionsSlice';
 
 const Missions = () => {
   const dispatch = useDispatch();
@@ -29,18 +29,44 @@ const Missions = () => {
                 <td className="fw-bold">{mission.mission_name}</td>
                 <td className="w-20">{mission.description}</td>
                 <td className="p-4 align-middle">
-                  <span className="badge badge-secondary bg-secondary px-3 py-2 fw-normal fs-6">
-                    Not a member
-                  </span>
+                  {
+                    !mission.reserved && (
+                      <span className="badge badge-secondary bg-secondary px-3 py-2 fw-normal fs-6">
+                        Not a member
+                      </span>
+                    )
+                  }
+                  {
+                    mission.reserved && (
+                      <span className="badge badge-info bg-info px-3 py-2 fw-normal fs-6">
+                        Active member
+                      </span>
+                    )
+                  }
                 </td>
                 <td className="p-4 align-middle">
-                  <button
-                    className="btn btn-outline-secondary"
-                    type="button"
-                    onClick={() => dispatch(joinMission(mission.mission_id))}
-                  >
-                    Join&nbsp;mission
-                  </button>
+                  {
+                    !mission.reserved && (
+                      <button
+                        className="btn btn-outline-secondary"
+                        type="button"
+                        onClick={() => dispatch(joinMission(mission.mission_id))}
+                      >
+                        Join&nbsp;mission
+                      </button>
+                    )
+                  }
+                  {
+                    mission.reserved && (
+                      <button
+                        className="btn btn-outline-danger"
+                        type="button"
+                        onClick={() => dispatch(leaveMission(mission.mission_id))}
+                      >
+                        Leave&nbsp;mission
+                      </button>
+                    )
+                  }
                 </td>
               </tr>
             ))
