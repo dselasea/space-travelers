@@ -34,20 +34,28 @@ const Missions = () => {
                   </span>
                 </td>
                 <td className="p-4 align-middle">
-                  <button
-                    className="btn btn-outline-secondary"
-                    type="button"
-                    onClick={() => dispatch(joinMission(mission.mission_id))}
-                  >
-                    Join&nbsp;mission
-                  </button>
-                  <button
-                    className="btn btn-outline-secondary"
-                    type="button"
-                    onClick={() => dispatch(leaveMission(mission.mission_id))}
-                  >
-                    Leave&nbsp;mission
-                  </button>
+                  {
+                    !mission.reserved && (
+                      <button
+                        className="btn btn-outline-secondary"
+                        type="button"
+                        onClick={() => dispatch(joinMission(mission.mission_id))}
+                      >
+                        Join&nbsp;mission
+                      </button>
+                    )
+                  }
+                  {
+                    mission.reserved && (
+                      <button
+                        className="btn btn-outline-danger"
+                        type="button"
+                        onClick={() => dispatch(leaveMission(mission.mission_id))}
+                      >
+                        Leave&nbsp;mission
+                      </button>
+                    )
+                  }
                 </td>
               </tr>
             ))
