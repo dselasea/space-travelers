@@ -24,7 +24,7 @@ const Rockets = () => {
                 <h5 className="card-title">{rocket.rocketName}</h5>
                 <p className="card-text">
                   {rocket.reserved && (
-                  <span className="badge bg-info me-2">Reserved</span>
+                  <span className="badge rounded-pill bg-primary mx-2">Reserved</span>
                   )}
                   {rocket.rocketDescription}
                 </p>
