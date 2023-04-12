@@ -29,9 +29,20 @@ const Missions = () => {
                 <td className="fw-bold">{mission.mission_name}</td>
                 <td className="w-20">{mission.description}</td>
                 <td className="p-4 align-middle">
-                  <span className="badge badge-secondary bg-secondary px-3 py-2 fw-normal fs-6">
-                    Not a member
-                  </span>
+                  {
+                    !mission.reserved && (
+                      <span className="badge badge-secondary bg-secondary px-3 py-2 fw-normal fs-6">
+                        Not a member
+                      </span>
+                    )
+                  }
+                  {
+                    mission.reserved && (
+                      <span className="badge badge-info bg-info px-3 py-2 fw-normal fs-6">
+                        Active member
+                      </span>
+                    )
+                  }
                 </td>
                 <td className="p-4 align-middle">
                   {
