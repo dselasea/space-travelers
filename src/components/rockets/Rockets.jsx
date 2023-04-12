@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchRockets, reserveRocket } from '../../redux/rockets/rocketsSlice';
+import { fetchRockets, reserveRocket, cancelReservation } from '../../redux/rockets/rocketsSlice';
 
 const Rockets = () => {
   const dispatch = useDispatch();
@@ -23,23 +23,29 @@ const Rockets = () => {
               <div className="card-body">
                 <h5 className="card-title">{rocket.rocketName}</h5>
                 <p className="card-text">
+                  {rocket.reserved && (
                   <span className="badge rounded-pill bg-primary mx-2">Reserved</span>
+                  )}
                   {rocket.rocketDescription}
                 </p>
+                {rocket.reserved && (
                 <button
                   type="button"
                   className="btn btn-outline-secondary"
-                  onClick={() => dispatch(reserveRocket(rocket.rocketId))}
+                  onClick={() => dispatch(cancelReservation(rocket.rocketId))}
                 >
                   Cancel Reservation
                 </button>
-                <button
-                  type="button"
-                  className="btn btn-primary"
-                  onClick={() => dispatch(reserveRocket(rocket.rocketId))}
-                >
-                  Reserve Rocket
-                </button>
+                )}
+                {!rocket.reserved && (
+                  <button
+                    type="button"
+                    className="btn btn-primary"
+                    onClick={() => dispatch(reserveRocket(rocket.rocketId))}
+                  >
+                    Reserve Rocket
+                  </button>
+                )}
               </div>
             </div>
           </div>
