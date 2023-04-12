@@ -22,7 +22,17 @@ const Rockets = () => {
             <div className="col-md-8">
               <div className="card-body">
                 <h5 className="card-title">{rocket.rocketName}</h5>
-                <p className="card-text">{rocket.rocketDescription}</p>
+                <p className="card-text">
+                  <span className="badge rounded-pill bg-primary mx-2">Reserved</span>
+                  {rocket.rocketDescription}
+                </p>
+                <button
+                  type="button"
+                  className="btn btn-outline-secondary"
+                  onClick={() => dispatch(reserveRocket(rocket.rocketId))}
+                >
+                  Cancel Reservation
+                </button>
                 <button
                   type="button"
                   className="btn btn-primary"
