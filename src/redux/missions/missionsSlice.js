@@ -26,7 +26,7 @@ const missionsSlice = createSlice({
     joinMission: (state, action) => {
       const id = action.payload;
       const missions = state.missions.map((mission) => {
-        if (mission.id !== id) return mission;
+        if (mission.mission_id !== id) return mission;
         return { ...mission, reserved: true };
       });
       return { ...state, missions };
