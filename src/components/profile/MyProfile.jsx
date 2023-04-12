@@ -6,7 +6,7 @@ const MyProfile = () => {
   const { rockets } = useSelector((state) => state.rockets);
 
   return (
-    <div className="p-4 m-auto profile-page">
+    <div className="p-5 m-auto profile-page">
       <div className="row">
         <div className="col-md-6 col-12">
           <h2 className="h4">My Missions</h2>
