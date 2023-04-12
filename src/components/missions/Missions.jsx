@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchMissions, joinMission } from '../../redux/missions/missionsSlice';
+import { fetchMissions, joinMission, leaveMission } from '../../redux/missions/missionsSlice';
 
 const Missions = () => {
   const dispatch = useDispatch();
@@ -38,6 +38,13 @@ const Missions = () => {
                     className="btn btn-outline-secondary"
                     type="button"
                     onClick={() => dispatch(joinMission(mission.mission_id))}
+                  >
+                    Join&nbsp;mission
+                  </button>
+                  <button
+                    className="btn btn-outline-secondary"
+                    type="button"
+                    onClick={() => dispatch(leaveMission(mission.mission_id))}
                   >
                     Join&nbsp;mission
                   </button>
