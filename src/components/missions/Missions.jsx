@@ -46,7 +46,7 @@ const Missions = () => {
                     type="button"
                     onClick={() => dispatch(leaveMission(mission.mission_id))}
                   >
-                    Join&nbsp;mission
+                    Leave&nbsp;mission
                   </button>
                 </td>
               </tr>
