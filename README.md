@@ -77,6 +77,7 @@ Clone this repository to your desired folder:
 ### Install
 
 Install this project with:
+
 ```sh
   npm install
 ```
@@ -84,7 +85,6 @@ Install this project with:
 ### Run tests
 
 To run tests, run the following command:
-
 
 ```sh
   npm test
@@ -114,14 +114,6 @@ To run tests, run the following command:
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## 🔭 Future Features <a name="future-features"></a>
-
-- [ ] **Booking**
-- [ ] **Rocker Reservation**
-- [ ] **Join Mission Section**
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 ## ⭐️ Show your support <a name="support"></a>
 
 If you like this project kindly give it a star
@@ -137,4 +129,3 @@ I would like to thank Microverse for creating this project.
 This project is [MIT](./LICENSE.md) licensed.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
